@@ -2,6 +2,36 @@
 <html lang="en">
   <head>
     <title>NR Contadores</title>
+	<style>
+        /* Contenedor para los mapas */
+        .map-container {
+            display: flex; /* Diseño en fila */
+            justify-content: space-between; /* Espacio uniforme entre los mapas */
+            gap: 1px; /* Separación entre los mapas */
+            flex-wrap: wrap; /* Adaptar a varias líneas en pantallas pequeñas */
+        }
+
+        /* Estilo común para ambos iframes */
+        iframe {
+            flex: 1; /* Permite que los mapas compartan espacio igualmente */
+            min-width: 300px; /* Ancho mínimo para mapas más pequeños en pantallas pequeñas */
+            height: 400px; /* Altura fija */
+            border: 0; /* Sin bordes */
+        }
+
+        /* Ajuste para pantallas pequeñas */
+        @media (max-width: 767.98px) {
+            .map-container {
+                flex-direction: column; /* Apilar mapas en dispositivos móviles */
+            }
+
+            iframe {
+                width: 100%; /* Ocupar todo el ancho en pantallas pequeñas */
+                height: 300px; /* Reducir altura */
+            }
+        }
+    </style>
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -56,24 +86,17 @@
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 			<div class="container">
 				<a class="navbar-brand" href="index.html">NR Contadores</a>
-				<form action="#" class="searchform order-sm-start order-lg-last">
-					<!-- <div class="form-group d-flex">
-				<input type="text" class="form-control pl-3" placeholder="Search">
-				<button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
-			  </div> -->
-				</form>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
 					aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="fa fa-bars"></span> Menu
 				</button>
 				<div class="collapse navbar-collapse" id="ftco-nav">
-					<ul class="navbar-nav m-auto">
-						<li class="nav-item active"><a href="index.html" class="nav-link">Inicio</a></li>
+					<ul class="navbar-nav m-auto" style="margin-right: 20px !important;"> <!-- Forzado aquí -->
+						<li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
 						<li class="nav-item"><a href="index.html#SobreNosotros" class="nav-link">Nosotros</a></li>
 						<li class="nav-item"><a href="index.html#Servicios" class="nav-link">Servicios</a></li>
-						<li class="nav-item"><a href="index.html" class="nav-link">Planes</a></li>
-						<!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
-						<li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
+						<!-- <li class="nav-item"><a href="index.html" class="nav-link">Planes</a></li>  -->
+						<li class="nav-item active"><a href="contact.html" class="nav-link">Contacto</a></li>
 					</ul>
 				</div>
 			</div>
@@ -84,8 +107,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-end">
           <div class="col-md-9 ftco-animate pb-5">
-          	<p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Contact Us <i class="ion-ios-arrow-forward"></i></span></p>
-            <h1 class="mb-0 bread">Contact Us</h1>
+          	<p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Inicio <i class="ion-ios-arrow-forward"></i></a></span> <span>Contacto <i class="ion-ios-arrow-forward"></i></span></p>
+            <h1 class="mb-0 bread">Contacto</h1>
           </div>
         </div>
       </div>
@@ -99,40 +122,40 @@
 							<div class="row no-gutters">
 								<div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
 									<div class="contact-wrap w-100 p-md-5 p-4">
-										<h3 class="mb-4">Get in touch</h3>
+										<h3 class="mb-4">Pónganse en contacto</h3>
 										<div id="form-message-warning" class="mb-4"></div> 
 					      		<div id="form-message-success" class="mb-4">
-					            Your message was sent, thank you!
+									Complete el formulario con su consulta y nos comunicaremos a la brevedad.
 					      		</div>
 										<form method="POST" id="contactForm" name="contactForm" class="contactForm">
 											<div class="row">
 												<div class="col-md-6">
 													<div class="form-group">
-														<label class="label" for="name">Full Name</label>
-														<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+														<label class="label" for="name">Nombre</label>
+														<input type="text" class="form-control" name="name" id="name" placeholder="Nombre">
 													</div>
 												</div>
 												<div class="col-md-6"> 
 													<div class="form-group">
-														<label class="label" for="email">Email Address</label>
+														<label class="label" for="email">Email</label>
 														<input type="email" class="form-control" name="email" id="email" placeholder="Email">
 													</div>
 												</div>
 												<div class="col-md-12">
 													<div class="form-group">
-														<label class="label" for="subject">Subject</label>
-														<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+														<label class="label" for="subject">Asunto</label>
+														<input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto">
 													</div>
 												</div>
 												<div class="col-md-12">
 													<div class="form-group">
-														<label class="label" for="#">Message</label>
-														<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+														<label class="label" for="#">Mensaje</label>
+														<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Mensaje"></textarea>
 													</div>
 												</div>
 												<div class="col-md-12">
 													<div class="form-group">
-														<input type="submit" value="Send Message" class="btn btn-primary">
+														<input type="submit" value="Enviar Mensaje" class="btn btn-primary">
 														<div class="submitting"></div>
 													</div>
 												</div>
@@ -142,22 +165,23 @@
 								</div>
 								<div class="col-lg-4 col-md-5 d-flex align-items-stretch">
 									<div class="info-wrap bg-primary w-100 p-md-5 p-4">
-										<h3>Let's get in touch</h3>
-										<p class="mb-4">We're open for any suggestion or just to have a chat</p>
+										<h3>Contacto</h3>
+										<p class="mb-4">Informacion</p>
 					        	<div class="dbox w-100 d-flex align-items-start">
 					        		<div class="icon d-flex align-items-center justify-content-center">
 					        			<span class="fa fa-map-marker"></span>
 					        		</div>
 					        		<div class="text pl-3">
-						            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+						            <p><span>Dirección:</span> Aguada, Montevideo.</p>
+									<p><span>Dirección:</span> Atlántida, Canelones.</p>
 						          </div>
 					          </div>
 					        	<div class="dbox w-100 d-flex align-items-center">
 					        		<div class="icon d-flex align-items-center justify-content-center">
-					        			<span class="fa fa-phone"></span>
+					        			<span class="fa fa-whatsapp"></span>
 					        		</div>
 					        		<div class="text pl-3">
-						            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+						            <p><span>WhatsApp:</span> <a href="tel://1234567920">+598 91 400 238</a></p>
 						          </div>
 					          </div>
 					        	<div class="dbox w-100 d-flex align-items-center">
@@ -165,7 +189,7 @@
 					        			<span class="fa fa-paper-plane"></span>
 					        		</div>
 					        		<div class="text pl-3">
-						            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+						            <p><span>Email:</span> <a href="mailto:info@yoursite.com">contacto@nrcontadores.com.uy</a></p>
 						          </div>
 					          </div>
 					        	<div class="dbox w-100 d-flex align-items-center">
@@ -173,7 +197,7 @@
 					        			<span class="fa fa-globe"></span>
 					        		</div>
 					        		<div class="text pl-3">
-						            <p><span>Website</span> <a href="#">yoursite.com</a></p>
+						            <p><span>Website:</span> <a href="#">nrcontadores.uy</a></p>
 						          </div>
 					          </div>
 				          </div>
@@ -185,7 +209,24 @@
     	</div>
     </section>
 
-   	<div id="map" class="map"></div>
+	<div class="map-container">
+        <!-- Primer Mapa -->
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13090.609866389677!2d-56.18788735!3d-34.8900723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f803bed36a1eb%3A0xb8499432e94acba!2sAguada%2C%2011800%20Montevideo%2C%20Departamento%20de%20Montevideo!5e0!3m2!1ses-419!2suy!4v1732123690493!5m2!1ses-419!2suy" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+        <!-- Segundo Mapa -->
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52443.375995134025!2d-55.832043412841365!3d-34.76287220491166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959ff53a7d09b749%3A0xf1a0b86c0ebe409e!2s15200%20Atl%C3%A1ntida%2C%20Departamento%20de%20Canelones!5e0!3m2!1ses-419!2suy!4v1732124342611!5m2!1ses-419!2suy" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+				
 
     <!-- <section class="ftco-section ftco-no-pb ftco-no-pt bg-secondary">
       <div class="container py-5">
@@ -205,7 +246,7 @@
       </div>
     </section> -->
 
-    <footer class="footer">
+	<footer class="footer">
 		<div class="container-fluid px-lg-5">
 			<div class="row">
 				<div class="col-md-9 py-5">
@@ -229,28 +270,27 @@
 										<div class="col-md-4 mb-md-0 mb-4">
 											<h2 class="footer-heading">Servicios</h2>
 											<ul class="list-unstyled">
-												<li><a href="#" class="py-1 d-block">Market Analysis</a></li>
-												<li><a href="#" class="py-1 d-block">Accounting Advisor</a></li>
-												<li><a href="#" class="py-1 d-block">General Consultancy</a></li>
-												<li><a href="#" class="py-1 d-block">Structured Assestment</a></li>
+												<li><a href="#Servicios" class="py-1 d-block">Apertura de SAS</a></li>
+												<li><a href="#Servicios" class="py-1 d-block">Gestoria</a></li>
+												<li><a href="#Servicios" class="py-1 d-block">Clausuras de Empresas</a></li>
+												<li><a href="#Servicios" class="py-1 d-block">Gestoria</a></li>
 											</ul>
 										</div>
 										<div class="col-md-4 mb-md-0 mb-4">
 											<h2 class="footer-heading">Descubre</h2>
 											<ul class="list-unstyled">
-												<li><a href="#" class="py-1 d-block">About us</a></li>
-												<li><a href="#" class="py-1 d-block">Contract us</a></li>
-												<li><a href="#" class="py-1 d-block">Terms &amp; Conditions</a></li>
-												<li><a href="#" class="py-1 d-block">Policies</a></li>
+												<li><a href="index.html#Nosotros" class="py-1 d-block">Nosotros</a></li>
+												<li><a href="contact.html" class="py-1 d-block">Contacto</a></li>
+												
 											</ul>
 										</div>
 										<div class="col-md-4 mb-md-0 mb-4">
 											<h2 class="footer-heading">Recursos</h2>
 											<ul class="list-unstyled">
-												<li><a href="#" class="py-1 d-block">Security</a></li>
-												<li><a href="#" class="py-1 d-block">Global</a></li>
-												<li><a href="#" class="py-1 d-block">Charts</a></li>
-												<li><a href="#" class="py-1 d-block">Privacy</a></li>
+												<li><a href="https://www.bps.gub.uy/17793/sociedades-por-acciones-simplificadas---sas.html" target="_blank" class="py-1 d-block">SAS</a></li>
+												<li><a href="https://www.bps.gub.uy/empresas" target="_blank" class="py-1 d-block">Empresas BPS</a></li>
+												<li><a href="https://www.bps.gub.uy/4789/remuneraciones.html" target="_blank" class="py-1 d-block">Remuneraciones</a></li>
+												
 											</ul>
 										</div>
 									</div>
@@ -271,23 +311,23 @@
 					</div>
 				</div>
 				<div class="col-md-3 py-md-5 py-4 aside-stretch-right pl-lg-5">
-					<h2 class="footer-heading">Free consultation</h2>
+					<h2 class="footer-heading">Consulta </h2>
 					<form action="#" class="form-consultation">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Your Name">
+							<input type="text" class="form-control" placeholder="Nombre">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Your Email">
+							<input type="text" class="form-control" placeholder="Email">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Subject">
+							<input type="text" class="form-control" placeholder="Asunto">
 						</div>
 						<div class="form-group">
 							<textarea name="" id="" cols="30" rows="3" class="form-control"
-								placeholder="Message"></textarea>
+								placeholder="Mensaje"></textarea>
 						</div>
 						<div class="form-group">
-							<button type="submit" class="form-control submit px-3">Send A Message</button>
+							<button type="submit" class="form-control submit px-3">Enviar Mensaje</button>
 						</div>
 					</form>
 				</div>
